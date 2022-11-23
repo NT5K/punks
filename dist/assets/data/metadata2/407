@@ -1,0 +1,38 @@
+{
+    "dna": "32230716c39a1d75e09fa2eb06103b51",
+    "name": "ECHPunk #407 GEN2",
+    "description": "Generation 2 ECHPunks are Echelon Blockchain based non-fungible tokens build for the ECHPunk ecosystem with more unique traits.",
+    "image": "ipfs://QmZb38Ag4QpepS4s2JF84RUqQEnLVYCqEsNvfEdwBCTNEF/407.png",
+    "date": 1653869486250,
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Black"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Monster 2"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Spikey Pink"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Steampunk Yellow"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Closed Mouth"
+        },
+        {
+            "trait_type": "Accessories",
+            "value": "Face Tattoo 1"
+        },
+        {
+            "trait_type": "Outfit",
+            "value": "Phsychobilly Red-Blue"
+        }
+    ],
+    "compiler": ""
+}

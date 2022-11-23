@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- <meta http-equiv="Access-Control-Allow-Origin" content="*"> -->
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ECHPunk Marketplace</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.2.0/dist/web3.min.js"></script>
+        <link rel="icon" type="image/png" href="./../assets/images/logos/logo2.png" />
+        <script src="https://cdn.jsdelivr.net/npm/bn.js@5.2.0/lib/bn.min.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-96V0NKCS60"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-96V0NKCS60');
+
+        </script>
+    </head>
+    <body class="sb-nav-fixed bg-dark" id="body">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark justify-content-between">
+            <a href="/" class="rounded mr-3 ml-3" style="text-decoration: none;letter-spacing: 2px !important;">
+                <h4 style="font-family:Digital;" class="p-0">
+                    <span style="color: #BA83FC;">ECH</span><span style="color: white;">Punks Marketplace</span>
+                </h4>
+            </a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-lg order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div id="sidebar_purchase_info_div">
+                                <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                    </nav>
+                                </div>
+                            </div>
+                    <div id="account_balances_menu_div">
+
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="true" aria-controls="collapseLayouts3">
+                            <div class="sb-nav-link-icon"><i class="fas fa-wallet"></i></div>
+                            Account Balances
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                    </div>
+                    <div class="collapse show" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                                    <div class="sb-nav-link-icon" id="showAccount"></div>
+                                    <div class="sb-nav-link-icon" id="showBalance"></div>
+                                    <div class="sb-nav-link-icon" id="AccountBalance"></div>
+                                    <div class="sb-nav-link-icon" id="ECHP_Balance"></div>
+                                    <div hidden class="sb-nav-link-icon" id="buy_echp_div">    
+                                        <a target="_blank"
+                                                href="https://echswap.finance/#/swap?inputCurrency=0xce2643c6180e857bce12b850cc5e89fc3b34ff0f"
+                                                target="_blank">
+                                                <button class="btn btn-sm btn-primary" id="buy_echp_button">Buy/Sell ECHP Token</button>
+                                            </a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <a class="nav-link" href="#" data-bs-toggle="" data-bs-target="#collapseLayouts4" aria-expanded="false" aria-controls="collapseLayouts4">
+                                <div class="sb-nav-link-icon"><i class="fas fa-link"></i></div>
+                                Links
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="" id="collapseLayouts4" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <div class="sb-nav-link-icon" id="openseaLink">
+                                        <a class="nav-link" href="/" target="">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-home"></i></div>
+                                            Home
+                                        </a>
+                                        <a class="nav-link" href="/stats" target="">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-home"></i></div>
+                                            Stats
+                                        </a>
+                                        <a class="nav-link" href="/minter" target="">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-home"></i></div>
+                                            Minter
+                                        </a>
+                                        <a class="nav-link" href="https://t.me/ECHPunksClubOfficial" target="_blank">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-telegram-plane"></i></div>
+                                            Telegram
+                                        </a>
+                                        <a class="nav-link" href="https://twitter.com/echpunksclub" target="_blank">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-telegram-plane"></i></div>
+                                            Twitter
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+            <main>
+            <div class="container-fluid px-4">
+                <!-- <a href="/minter"><< Back to Minter</a><Br>
+                <a href="/stats"><< Back to Stats</a> -->
+
+                <div class="row justify-content-center pt-2">
+                    <div class="col-md-12 pt-4" id="button_column">
+                        <div id="enableMeta" class="card rounded border-dark text-white mb-2">
+                            <div class="card-body text-center p-1" id="connect_button_div" style="background-color: #242424 !important;">
+                                <button class="enableEthereumButton btn btn-sm btn-primary border border-primary" id="buttonmeta"
+                                    type="button">
+                                    CONNECT WALLET
+                                </button>
+                            </div>
+                        </div>
+                        <div hidden id="load_button_div" class="card bg-secondary rounded border-dark text-white mb-2">
+                           <div class="card-body text-center p-1" id="" style="background-color: #242424 !important;">
+                                    <button id="mint_button" onclick="loadMetadata()" class="btn btn-sm btn-danger">LOAD DATA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row justify-content-center text-white pt-2">
+                    <div id="myPunks" class="row text-center justify-content-center">
+                                                    </div>
+                </div> -->
+                <div class="row justify-content-center text-white pt-2">
+                    <div id="myListedPunks" class="row text-center justify-content-center">
+                                                    </div>
+                </div>
+                
+            </main>
+            <footer class="py-4 bg-dark text-white mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">ECHPUNKS 2022</div>
+                        <div>
+                            <a href="https://t.me/ECHPunksClubOfficial" target="_blank">Telegram</a>
+                            <a href="https://twitter.com/echpunksclub" target="_blank">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="./../js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.min.js"
+            integrity="sha512-7UzDjRNKHpQnkh1Wf1l6i/OPINS9P2DDzTwQNX79JxfbInCXGpgI1RPb3ZD+uTP3O5X7Ke4e0+cxt2TxV7n0qQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./../js/app/abi.js"></script>
+        <script src="./../js/app/marketplace2.js"></script>
+        <script>
+            
+            $(function () {
+                $('[data-toggle="popover"]').popover({
+                trigger: 'focus'
+                })
+            })
+
+        </script>
+    </body>
+</html>

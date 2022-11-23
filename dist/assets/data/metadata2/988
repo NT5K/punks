@@ -1,0 +1,38 @@
+{
+    "dna": "0c74964d7278b4dccbec1bc851dd4cef",
+    "name": "ECHPunk #988 GEN2",
+    "description": "Generation 2 ECHPunks are Echelon Blockchain based non-fungible tokens build for the ECHPunk ecosystem with more unique traits.",
+    "image": "ipfs://QmZb38Ag4QpepS4s2JF84RUqQEnLVYCqEsNvfEdwBCTNEF/988.png",
+    "date": 1653869991881,
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Black"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Alien 4"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Bucket Hat Green"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Vetements 2"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Lips Yellow v2"
+        },
+        {
+            "trait_type": "Accessories",
+            "value": "Spike Earing Orange"
+        },
+        {
+            "trait_type": "Outfit",
+            "value": "Phsychobilly Yellow-Green"
+        }
+    ],
+    "compiler": ""
+}

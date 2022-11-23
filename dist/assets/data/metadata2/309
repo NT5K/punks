@@ -1,0 +1,38 @@
+{
+    "dna": "9ce3a592148b7e1ce533e96a40dfe1ac",
+    "name": "ECHPunk #309 GEN2",
+    "description": "Generation 2 ECHPunks are Echelon Blockchain based non-fungible tokens build for the ECHPunk ecosystem with more unique traits.",
+    "image": "ipfs://QmZb38Ag4QpepS4s2JF84RUqQEnLVYCqEsNvfEdwBCTNEF/309.png",
+    "date": 1653869387495,
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Black"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Pink 1"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Snakeback Pink"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Glasses Blue"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Lips Orange v2"
+        },
+        {
+            "trait_type": "Accessories",
+            "value": "Multiple Earrings Blue"
+        },
+        {
+            "trait_type": "Outfit",
+            "value": "Phsychobilly Orange-Pink"
+        }
+    ],
+    "compiler": ""
+}

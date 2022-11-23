@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- <meta http-equiv="Access-Control-Allow-Origin" content="*"> -->
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ECHPunk Battle!</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.2.0/dist/web3.min.js"></script>
+        <link rel="icon" type="image/png" href="./../assets/images/logos/logo2.png" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-96V0NKCS60"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-96V0NKCS60');
+        </script>
+    </head>
+    <body class="sb-nav-fixed bg-dark" id="body">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark justify-content-between">
+            <a href="/" class="rounded mr-3 ml-3" style="text-decoration: none;letter-spacing: 2px !important;">
+                <h4 style="font-family:Digital;" class="p-0">
+                <!-- <h4 style="" class="p-0"> -->
+                    <span style="color: #BA83FC;">ECH</span><span style="color: white;">Punks Game</span>
+                </h4>
+            </a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-lg order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div id="sidebar_purchase_info_div">
+                                <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                    </nav>
+                                </div>
+                            </div>
+                    <div id="account_balances_menu_div">
+
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="true" aria-controls="collapseLayouts3">
+                            <div class="sb-nav-link-icon"><i class="fas fa-wallet"></i></div>
+                            Account Balances
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                    </div>
+                    <div class="collapse show" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                                    <div class="sb-nav-link-icon" id="showAccount"></div>
+                                    <div class="sb-nav-link-icon" id="showBalance"></div>
+                                    <div class="sb-nav-link-icon" id="AccountBalance"></div>
+                                    <div class="sb-nav-link-icon" id="ECHP_Balance"></div>
+                                    <div hidden class="sb-nav-link-icon" id="buy_echp_div">    
+                                        <a target="_blank"
+                                                href="https://echswap.finance/#/swap?inputCurrency=0xce2643c6180e857bce12b850cc5e89fc3b34ff0f"
+                                                target="_blank">
+                                                <button class="btn btn-sm btn-primary" id="buy_echp_button">Buy/Sell ECHP Token</button>
+                                            </a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <a class="nav-link" href="#" data-bs-toggle="" data-bs-target="#collapseLayouts4" aria-expanded="false" aria-controls="collapseLayouts4">
+                                <div class="sb-nav-link-icon"><i class="fas fa-link"></i></div>
+                                Links
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="" id="collapseLayouts4" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <div class="sb-nav-link-icon" id="openseaLink">
+                                        <a class="nav-link" href="/" target="">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-home"></i></div>
+                                            Home
+                                        </a>
+                                        <a class="nav-link" href="/minter" target="">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-home"></i></div>
+                                            NFT Minter
+                                        </a>
+                                        <a class="nav-link" href="/place" target="">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-home"></i></div>
+                                            Place!
+                                        </a>
+                                        <a class="nav-link" href="/click" target="">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-home"></i></div>
+                                            Click!
+                                        </a>
+                                        <a class="nav-link" href="/stats" target="">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-home"></i></div>
+                                            Stats
+                                        </a>
+                                        <a class="nav-link" href="https://t.me/ECHPunksClubOfficial" target="_blank">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-telegram-plane"></i></div>
+                                            Telegram
+                                        </a>
+                                        <a class="nav-link" href="https://twitter.com/echpunksclub" target="_blank">
+                                            <div class="sb-nav-link-icon"><i class="fab fa-telegram-plane"></i></div>
+                                            Twitter
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+            <section id="connect_user">
+                <div id="enableMeta" class="card bg-secondary rounded border-dark text-white mb-2">
+                    <div class="card-body text-center p-1" id="">
+                        <button class="enableEthereumButton btn btn-sm btn-primary border border-primary" id="buttonmeta" type="button">
+                            CONNECT WALLET
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section hidden id="pre_game" class="m-3">
+                <div class="row" id="">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="card bg-secondary rounded border-dark text-white mb-2" id="nft_info_card">
+                            <div class="card-body text-center pt-3" id="">
+                                <p>Current Wager: 1 ECH</p>
+                                <div>
+                                    <button class="btn btn-primary mb-1" id="create_game" onclick="createGame()">Create Game</button>
+                                    <input type="text" class="w-100 text-center" id="player_2_address" placeholder="opponents address">
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-primary mb-1" id="join_game" onclick="joinGame()">Join Game</button>
+                                    <br>
+                                    <input type="number" class="w-25 text-center" id="game_number" placeholder="game #">
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="card bg-secondary rounded border-dark text-white mb-2" id="nft_info_card">
+                            <div class="card-body text-center pt-3" id="">
+                                <h4>Set my NFT</h4>
+                                <h6 hidden id="i_am_registered" style="color: green;">I have a registered NFT</h6>
+                                <h6 hidden id="im_not_registered" style="color:red;">I have not registered a NFT</h6>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="nft_gen">Select Gen 1 or Gen 2 NFT's:</label>
+                                        <br>
+                                        <select id="nft_gen" name="nft_gen">
+                                            <option value="0x7f11d149171711904f6c497A9ed0E8Bd4D895551">Gen1</option>
+                                            <option value="0x59b62377D9ba3f4fB4F4df8Ec2b771984CEaf86c">Gen2</option>
+                                        </select>
+                                        <br><br>
+                
+                                        <h6>NFT ID#</h6>
+                                        <input type="number" class="w-25 text-center" id="nft_number_choice" placeholder="NFT #">
+                                        <button id="set_nft_button" onclick="setNFT()">Set NFT</button>
+                                        <br>
+                                        <button hidden id="clear_account_button" class="mt-1" onclick="clearAccount()">Clear Account</button>
+                                        <p id="not_your_nft"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section hidden id="in_game">
+            <div class="container-fluid px-4">
+                <div class="row pt-2">
+                    <div class="col-md-6">
+                        <div class="row" id="mint_row">
+                            <div class="col-12">
+                                <div class="card bg-secondary rounded border-dark text-white mb-2" id="nft_info_card">
+                                    <div class="card-body text-center pt-3" id="">
+                                        <h4>Current Round #<span id="current_round"></span></h4>
+                                        <h6>Player <span id="current_attacker">?</span> attacks first this round</h6>
+                                        <div class="border border-light">
+                                        <u>LIVE FEED</u>
+                                        <div id="live_feed">&nbsp;</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <table class="w-100 border border-light">
+                                                    <tr class="border border-light">
+                                                        <th>Attack</th>
+                                                        <th>Area</th>
+                                                        <th>Defend</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="hair_attack" onclick="getAttackValue()"></td>
+                                                        <td>Hair Pull</td>
+                                                        <td><input type="checkbox" id="hair_defend" onclick="getDefendValue()"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="eyes_attack" onclick="getAttackValue()"></td>
+                                                        <td>Eye Poke</td>
+                                                        <td><input type="checkbox" id="eyes_defend" onclick="getDefendValue()"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="nose_attack" onclick="getAttackValue()"></td>
+                                                        <td>Nose Flick</td>
+                                                        <td><input type="checkbox" id="nose_defend" onclick="getDefendValue()"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox" id="nipple_attack" onclick="getAttackValue()"></td>
+                                                        <td>Nipple Twister</td>
+                                                        <td><input type="checkbox" id="nipple_defend" onclick="getDefendValue()"></td>
+                                                    </tr>
+                                                </table>
+                                                <div class="mt-1">
+                                                    <button hidden id="commit_button" class="btn btn-primary mb-1" onclick="getHashFromContract()">Submit Moves</button>
+                                                    <p hidden id="commit_error_message">Attack and Defend only 2 spots!</p>
+                                                    <button hidden id="reveal_button" class="btn btn-primary mb-1" onclick="revealAnswer()">Reveal Moves</button>
+                                                </div>
+                                                <div class="row text-center">
+                                                    <div class="col-12">
+                                                        <table class="w-100 border border-light">
+                                                            <tr>
+                                                                <th>Player 1</th>
+                                                                <th>Player 2</th>
+                                                            </tr>
+                                                            <tr class="w-100">
+                                                                <td><span id="p1_address">&nbsp;</span></td>
+                                                                <td><span id="p2_address">&nbsp;</span></td>
+                                                            </tr>
+                                                            <tr class="w-100">
+                                                                <td><img id="p1_image" src="./../assets/images/nakedpunk.png" class="w-50 mb-2"></td>
+                                                                <td><img id="p2_image" src="./../assets/images/nakedpunk.png" class="w-50 mb-2"></td>
+                                                            </tr>
+                                                            <tr class="w-100 border border-light">
+                                                                <td><span>
+                                                                        <p id="player1Hp" class="m-0">&nbsp;</p>
+                                                                    </span></td>
+                                                                <td><span>
+                                                                        <p id="player2Hp" class="m-0">&nbsp;</p>
+                                                                    </span></td>
+                                                            </tr>
+                                                            <tr class="w-100 border border-light">
+                                                                <td><span>
+                                                                        <p id="player1_wins" class="m-0">&nbsp;</p>
+                                                                    </span></td>
+                                                                <td><span>
+                                                                        <p id="player2_wins" class="m-0">&nbsp;</p>
+                                                                    </span></td>
+                                                            </tr>
+                                                            <tr class="w-100 border border-light">
+                                                                <td><span>
+                                                                        <p id="player1_losses" class="m-0">&nbsp;</p>
+                                                                    </span></td>
+                                                                <td><span>
+                                                                        <p id="player2_losses" class="m-0">&nbsp;</p>
+                                                                    </span></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div hidden id="end_draw_div" class="border border-light">
+                                                    <div>
+                                                        <p>This game is a draw, continue to exit</p>
+                                                        <button class="btn btn-primary mb-1" onclick="endDraw()">End Draw</button>
+                                                    </div>
+                                                </div>
+                                                <div hidden id="early_end_div" class="border border-light">
+                                                    <div>
+                                                        <!-- <p id="early_end_text"></p> -->
+                                                        <p>End game to continue</p>
+                                                        <button class="btn btn-primary mb-1 mt-2" onclick="earlyEndGame()">End Game</button>
+                                                    </div>
+                                                </div>
+                                                <div hidden id="winner_div" class="border border-light">
+                                                    <h4 id="winner_or_loser"></h4>
+                                                    <!-- <p id="winner"></p> -->
+                                                    <div hidden id="withdraw_winner_button">
+                                                        <p>Proceed to withdraw your winnings</p>
+                                                        <button class="btn btn-primary mb-1 mt-2" onclick="endGameWinner()">Withdraw Winnings</button>
+                                                    </div>
+                                                    <div hidden id="loser_exit_button">
+                                                        <p>Please proceed to exit game</p>
+                                                        <button class="btn btn-primary mb-1 mt-2" onclick="endGameLoser()">Leave Game</button>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <!-- <span>Game is Live: <p id="gameIsLive"></p></span> -->
+                                                    <button hidden class="btn btn-primary mb-1 mt-2" id="cancel_game" onclick="cancelGame()">Cancel Game</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="">
+                    
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card bg-secondary rounded border-dark text-white mb-2">
+                                    <div class="card-body text-center pt-0" id="">
+                                        <!-- defend table -->
+                                        <h4>Previous Round #<span id="previous_round"></span></h4>
+                                        <p>Game Number: <span id="my_game_number"></span><br>
+                                        Player Number: <span id="current_player_number"></span></p>
+                                        <table class="w-100 border border-light">
+                                            <tr class="border border-light">
+                                                <th>Player 1</th>
+                                                <th>Player 2</th>
+                                            </tr>
+                                            <tr>
+                                                <td id="player1_point_deduction">?</td>
+                                                <td id="player2_point_deduction">?</td>
+                                            </tr>
+                                        </table>
+                                        <table class="w-100 border border-light">
+                                            <tr class="border border-light">
+                                                <th>Area</th>
+                                                <th>P1 Defends</th>
+                                                <th>P2 Attacks</th>
+                                                <th>Points</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Hair Pull</td>
+                                                <td>
+                                                    <p id="p1_defends_hair">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="p2_attacks_hair">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="my_hair_point_deduction">?</p>
+                                                </td>
+                                                <!-- <td><input type="checkbox" id="hair_defend" onclick="getDefendValue()"></td> -->
+                                            </tr>
+                                            <tr>
+                                                <td>Eye Poke</td>
+                                                <td>
+                                                    <p id="p1_defends_eyes">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="p2_attacks_eyes">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="my_eyes_point_deduction">?</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nose Flick</td>
+                                                <td>
+                                                    <p id="p1_defends_nose">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="p2_attacks_nose">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="my_nose_point_deduction">?</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nipple Twister</td>
+                                                <td>
+                                                    <p id="p1_defends_nipple">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="p2_attacks_nipple">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="my_nipple_point_deduction">?</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- attack table -->
+                                        <table class="w-100 border border-light">
+                                            <tr class="border border-light">
+                                                <th>Area</th>
+                                                <th>P1 Attacks</th>
+                                                <th>P2 Defends</th>
+                                                <th>Points</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Hair Pull</td>
+                                                <td>
+                                                    <p id="p1_attacks_hair">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="p2_defends_hair">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="my_hair_point_hits">?</p>
+                                                </td>
+                                                <!-- <td><input type="checkbox" id="hair_defend" onclick="getDefendValue()"></td> -->
+                                            </tr>
+                                            <tr>
+                                                <td>Eye Poke</td>
+                                                <td>
+                                                    <p id="p1_attacks_eyes">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="p2_defends_eyes">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="my_eyes_point_hits">?</p>
+                                                </td>
+                                                <!-- <td><input type="checkbox" id="eyes_attack" onclick="getAttackValue()"></td>
+                                                                    <td>Eye Poke</td>
+                                                                    <td><input type="checkbox" id="eyes_defend" onclick="getDefendValue()"></td> -->
+                                            </tr>
+                                            <tr>
+                                                <td>Nose Flick</td>
+                                                <td>
+                                                    <p id="p1_attacks_nose">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="p2_defends_nose">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="my_nose_point_hits">?</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nipple Twister</td>
+                                                <td>
+                                                    <p id="p1_attacks_nipple">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="p2_defends_nipple">?</p>
+                                                </td>
+                                                <td>
+                                                    <p id="my_nipple_point_hits">?</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-2">
+                                
+                    <div hidden id="my_echpunks_div" >
+                        <div class="card bg-secondary rounded border-dark text-white mb-2">
+                            <div id="headingOne3"
+                                style="background-color:#3E4145;">
+                                <div class="card-title text-center" style="background-color: #3E4145 !important; cursor: pointer;">
+                                    <b class="ml-2 mb-0">MY ECHPUNKS</b>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="feed_row_accordion" class="card-body text-center">
+                                    <div class="card-body text-center" id="">
+                                        <p><a href="/stats">>> SEE MORE STATS <<</a></p>
+                                        
+                                        <div id="myPunks" class="row justify-content-center">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <footer class="py-4 bg-dark text-white mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">ECHPUNKS 2022</div>
+                        <div>
+                            <a href="https://t.me/ECHPunksClubOfficial" target="_blank">Telegram</a>
+                            <a href="https://twitter.com/echpunksclub" target="_blank">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <script src="./../js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/8.0.2/bignumber.min.js"
+            integrity="sha512-7UzDjRNKHpQnkh1Wf1l6i/OPINS9P2DDzTwQNX79JxfbInCXGpgI1RPb3ZD+uTP3O5X7Ke4e0+cxt2TxV7n0qQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./../js/app/abi.js"></script>
+        <script src="./../js/app/game.js"></script>
+        <script>
+            
+            $(function () {
+                $('[data-toggle="popover"]').popover({
+                trigger: 'focus'
+                })
+            })
+
+        </script>
+    </body>
+</html>

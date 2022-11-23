@@ -1,0 +1,38 @@
+{
+    "dna": "c7033d9ec27e1293194d67ca14ea1ec8",
+    "name": "ECHPunk #87 GEN2",
+    "description": "Generation 2 ECHPunks are Echelon Blockchain based NFT's build for the ECHPunk ecosystem with more unique traits.",
+    "image": "ipfs://QmZb38Ag4QpepS4s2JF84RUqQEnLVYCqEsNvfEdwBCTNEF/87.png",
+    "date": 1653869061073,
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Black"
+        },
+        {
+            "trait_type": "Body",
+            "value": "Light 3"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Spike Cap Orange"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Disgusting Green"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Chuckle"
+        },
+        {
+            "trait_type": "Accessories",
+            "value": "Choker Yellow"
+        },
+        {
+            "trait_type": "Outfit",
+            "value": "Phsychobilly Red-Blue"
+        }
+    ],
+    "compiler": ""
+}
